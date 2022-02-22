@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+  app:
+    build: .
+    image: profile:latest
+    container_name: app
+    env_file:
+      - ./deploy/.env.prod
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    networks:
+      - app
+
+
+  db:
+    image: postgres:13.0
+    container_name: db
+    env_file:
+      - ./deploy/.env.prod
+    volumes:
+     - db_data:/var/lib/postgresql/data/
+    networks:
+      - app
+
+networks:
+  app:
+
+volumes:
+  db_data:
