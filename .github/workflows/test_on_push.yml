@@ -34,7 +34,7 @@ jobs:
         pip install -r requirements.dev.txt
     - name: Lint with flake8
       run: |
-        flake8
+        make lint
     - name: Test with pytest
       run: |
-        pytest
+        make test
