@@ -1,2 +1,1 @@
-from app.schemas.transaction import Transaction
-from app.schemas.user import UserBalance, UserCreate, UserTransfer
+from app.schemas.profile import Profile, ProfileCreate, ProfileDelete, ProfileUpdate
