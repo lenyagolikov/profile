@@ -30,6 +30,8 @@ class ProfileBase(BaseModel):
 
     @validator("last_seen_location")
     def lot_lan_required(cls, v):
+        if v is None:
+            return v
         if "lon" not in v or "lat" not in v:
             raise ValueError("must contain keys: lon and lat")
         return v
@@ -50,5 +52,5 @@ class ProfileUpdate(ProfileBase):
     pass
 
 
-class ProfileDelete(BaseModel):
+class ProfileResponse(BaseModel):
     id: int

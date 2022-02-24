@@ -1,1 +1,6 @@
-from app.schemas.profile import Profile, ProfileCreate, ProfileDelete, ProfileUpdate
+from app.schemas.profile import (
+    Profile,
+    ProfileCreate,
+    ProfileUpdate,
+    ProfileResponse,
+)
