@@ -20,9 +20,7 @@ def make_alembic_config(cmd_opts, base_path: str = PROJECT_PATH) -> Config:
     # Подменяем путь до папки с alembic на абсолютный
     alembic_location = config.get_main_option("script_location")
     if not os.path.isabs(alembic_location):
-        config.set_main_option(
-            "script_location", os.path.join(base_path, alembic_location)
-        )
+        config.set_main_option("script_location", os.path.join(base_path, alembic_location))
     if cmd_opts.pg_url:
         config.set_main_option("sqlalchemy.url", cmd_opts.pg_url)
 
