@@ -26,7 +26,7 @@ class ProfileBase(BaseModel):
     average_number_of_purchases: Optional[int] = Field(default=0, ge=0)
     device_list: Optional[Device] = None
     locations_list: Optional[str] = None
-    last_seen_location: Optional[Json] = None
+    last_seen_location: Optional[dict] = None
 
     @validator("last_seen_location")
     def lot_lan_required(cls, v):
