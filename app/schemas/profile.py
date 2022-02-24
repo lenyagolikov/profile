@@ -2,7 +2,7 @@ from datetime import datetime
 from enum import IntEnum
 from typing import Optional
 
-from pydantic import BaseModel, Field, Json, validator
+from pydantic import BaseModel, Field, validator
 
 
 class Gender(IntEnum):
